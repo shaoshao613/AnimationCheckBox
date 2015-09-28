@@ -5,9 +5,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
 						.setAction("Action", null).show();
 			}
 		});
+		AnimationCheckBox animationCheckBox= (AnimationCheckBox) findViewById(R.id.rotation);
+		animationCheckBox.setAnimationCheck(new RotateAnimation(0f,180f, Animation.RELATIVE_TO_SELF,
+				0.5f,Animation.RELATIVE_TO_SELF,0.5f));
+
+
+
 	}
 
 	@Override

@@ -4,11 +4,11 @@ package bxapp.baixing.com.bxwidget;
  * Created by shaoting on 15/9/25.
  */
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.CheckBox;
@@ -19,9 +19,7 @@ import android.widget.CheckBox;
 public class AnimationCheckBox extends CheckBox {
 	private static final int TYPE_ROTATION = 1;
 	private static final int TYPE_SCALE = 2;
-	private ObjectAnimator pressedAnimator;
 	private Animation animationCheck;
-	private AnimationCheckBox view;
 	private Animation animationUnCheck;
 	private int defaultType=0;
 	private float defaultScaleSize=1.2f;
@@ -45,6 +43,14 @@ public class AnimationCheckBox extends CheckBox {
 	private void init(Context context, AttributeSet attrs) {
 		TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.AnimationCheckBox);
 		int type=mTypedArray.getInt(R.styleable.AnimationCheckBox_animation_type, defaultType);
+		int animitionCheckId=mTypedArray.getResourceId(R.styleable.AnimationCheckBox_animation_check, 0);
+		if(animitionCheckId!=0){
+			setAnimationUnCheck(AnimationUtils.loadAnimation(context, animitionCheckId));
+		}
+		int animitionUnCheckId=mTypedArray.getResourceId(R.styleable.AnimationCheckBox_animation_uncheck, 0);
+		if(animitionUnCheckId!=0){
+			setAnimationUnCheck(AnimationUtils.loadAnimation(context,animitionUnCheckId));
+		}
 		duration=mTypedArray.getInt(R.styleable.AnimationCheckBox_duration, defaultDuration);
 		float scaleSize=mTypedArray.getFloat(R.styleable.AnimationCheckBox_scale_size, defaultScaleSize);
 		switch (type){
@@ -101,7 +107,7 @@ public class AnimationCheckBox extends CheckBox {
 		animationUnCheck=enlarge;
 	}
 
-	private void setAnimationCheck(Animation animationCheck){
+	public void setAnimationCheck(Animation animationCheck){
 		this.animationCheck=animationCheck;
 		animationCheck.setAnimationListener(new Animation.AnimationListener() {
 			@Override
@@ -121,7 +127,7 @@ public class AnimationCheckBox extends CheckBox {
 		});
 	}
 
-	private void setAnimationUnCheck(Animation animationUnCheck){
+	public void setAnimationUnCheck(Animation animationUnCheck){
 		this.animationUnCheck=animationUnCheck;
 		animationUnCheck.setAnimationListener(new Animation.AnimationListener() {
 			@Override
@@ -161,6 +167,9 @@ public class AnimationCheckBox extends CheckBox {
 
 	@Override
 	public void setChecked(final boolean checked){
+		if(checked==isChecked()){
+			return;
+		}
 		if(checked){
 			if(animationCheck !=null){
 				showCheckAnimation();
