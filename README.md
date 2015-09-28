@@ -1,12 +1,17 @@
 # AnimationCheckBox
 
 *有点击动画的CheckBox*
+
 *初始设置有两个动画，旋转和放大，可以通过xml配置或java自定义动画*
+
 *适合收藏和点击弹出下拉窗口*
+
 ![Screencapture GIF](http://file.baixing.net/201509/f8984d692ad89aa5e247029aa817a30e.gif)
 
-## 使用指南
-只要加入AnimationCheckBox类，并在attr.xml里加入如下说明
+-----------
+## 配置指南  
+
+*只要加入AnimationCheckBox类，并在attr.xml里加入如下说明*
 ```
 <attr name="animation_type">
         <enum name="scale" value="2"></enum>
@@ -22,10 +27,13 @@
     
 ```
 
+--------
 
 ## 使用指南
 
-*旋转动画配置，*
+
+- 旋转动画配置
+
 *animation_type为rotation,可设置动画时长*
 ```
 <bxapp.baixing.com.bxwidget.AnimationCheckBox
@@ -41,7 +49,8 @@
 
 ```
 
-*放大动画配置，*
+- 放大动画配置
+
 *animation_type为scale,可设置动画时长,放大或缩小的系数*
 ```
 <bxapp.baixing.com.bxwidget.AnimationCheckBox
@@ -59,7 +68,8 @@
 
 ```
 
-*自定义动画xml配置，*
+- 自定义动画xml配置
+
 *animation_check为check动作的动画*
 *animation_uncheck为uncheck动作的动画*
 ```
@@ -78,11 +88,11 @@
 
 ```
 
-*自定义动画java配置，*
+- 自定义动画java配置
+
 *setAnimationCheck为check动作的动画*
 *setAnimationUnCheck为uncheck动作的动画*
 ```
 animationCheckBox.setAnimationCheck(new RotateAnimation(0f,180f, Animation.RELATIVE_TO_SELF,
-				0.5f,Animation.RELATIVE_TO_SELF,0.5f));
-```
+    			0.5f,Animation.RELATIVE_TO_SELF,0.5f));
 
