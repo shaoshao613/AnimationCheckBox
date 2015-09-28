@@ -6,7 +6,7 @@
 
 *适合收藏和点击弹出下拉窗口*
 
-![Screencapture GIF](http://file.baixing.net/201509/f8984d692ad89aa5e247029aa817a30e.gif)
+![Screencapture GIF](http://file.baixing.net/201509/a103bcc04c4e2a257fbd3b18ecbd784d.gif)
 
 -----------
 ## 配置指南  
