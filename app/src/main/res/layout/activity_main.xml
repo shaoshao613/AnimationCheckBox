@@ -32,25 +32,43 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_dialog_email"/>
 
+
     <bxapp.baixing.com.bxwidget.AnimationCheckBox
         android:id="@+id/arrow_down"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:duration="500"
+        android:layout_marginRight="180dp"
         app:animation_type="rotation"
         android:layout_gravity="center"
         android:button="@drawable/arrow_checkbox"
         />
+
     <bxapp.baixing.com.bxwidget.AnimationCheckBox
         android:id="@+id/scale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
+        android:padding="20dp"
         app:scale_size="1.2"
         app:duration="800"
+        android:layout_marginLeft="30dp"
         app:animation_type="scale"
         android:layout_gravity="center"
         android:button="@drawable/heart_check_selector"
         />
+
+    <bxapp.baixing.com.bxwidget.AnimationCheckBox
+        android:id="@+id/anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:padding="20dp"
+        android:layout_marginLeft="200dp"
+        app:animation_check="@anim/checkbox_anim"
+        app:animation_uncheck="@anim/checkbox_anim"
+        android:layout_gravity="center"
+        android:button="@drawable/heart_check_selector"
+        />
+
 
 </android.support.design.widget.CoordinatorLayout>

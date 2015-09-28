@@ -6,6 +6,8 @@
     </attr>
     <declare-styleable name="AnimationCheckBox">
         <attr name="duration" format="integer"></attr>
+        <attr name="animation_check" format="reference"></attr>
+        <attr name="animation_uncheck" format="reference"></attr>
         <attr name="scale_size" format="float"></attr>
         <attr name="animation_type"></attr>>
     </declare-styleable>
